@@ -1,0 +1,21 @@
+---
+interface Props {
+    type:string
+    element:string
+}
+
+const { type,element } = Astro.props as Props;
+---
+
+{
+    type == 'tecnologie' ?
+        <svg role="img" class="w-full h-full">
+            <title>Icono de la tecnologia {element}</title>
+            <use href={`icons-op/tecnologies.svg#${element}`}/>
+        </svg>:
+        <svg role="img" class="w-full h-full">
+            <title>Icono de contacto {element}</title>
+            <use href={`icons-op/contact.svg#${element}`}/>
+        </svg>
+}
+

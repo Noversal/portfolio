@@ -1,0 +1,45 @@
+---
+import Icon from "./Icon.astro";
+
+interface Props {
+  title?: string;
+  img?: string;
+  description?: string;
+  tecnologies?: string[];
+}
+
+const {
+  img = "https://images.unsplash.com/photo-1613398773682-9e272a85f203",
+  title = "Ejemplo de Titulo",
+  description = "lorem ipsum",
+  tecnologies = [],
+} = Astro.props as Props;
+---
+
+<div class="card w-72 bg-base-100 shadow-xl">
+  <header class="relative">
+    <figure>
+      <img src={img} alt={title} class="w-full h-48 object-cover" />
+    </figure>
+    <div class="bg-gradient-to-t from-black/70 to-transparent z-10 absolute w-full h-full bottom-0"></div>
+    <h2 class="card-title z-20 absolute bottom-0 p-2">{title}</h2>
+  </header>
+  <div class="card-body">
+    <p>{description}</p>
+    <div class="card-actions">
+      {
+        tecnologies.length != 0 ? (
+          tecnologies.map((tecnologie) => (
+            <div class="tooltip tooltip-bottom" data-tip={tecnologie}>
+              <div class="badge badge-accent size-12">
+                <Icon type="tecnologie" element={tecnologie} />
+              </div>
+            </div>
+          ))
+        ) : (
+          <div class="badge badge-primary">No hay Tecnologias indicadas</div>
+        )
+      }
+    </div>
+  </div>
+</div>

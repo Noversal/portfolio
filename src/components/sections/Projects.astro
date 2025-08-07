@@ -1,0 +1,25 @@
+---
+import Card from "../Card.astro";
+import { projects } from "../../data/projects";
+---
+
+<section class="py-16 bg-base-100">
+  <h2 id="proyects" class="text-3xl font-bold text-center mb-8">Proyectos</h2>
+  <p class="py-6">
+    Proyectos en los que he trabajado en equipo y tambien de forma personal.
+  </p>
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center"
+  >
+    {
+      projects.map(({ title, content, tecnologies, img }) => (
+        <Card
+          title={title}
+          description={content}
+          tecnologies={tecnologies}
+          img={img}
+        />
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,42 @@
+---
+interface Props {
+  text?: string;
+  link?: string;
+  size?: "normal" | "big";
+  target?: "_blank" | "_self";
+  download?: boolean;
+  icon?: any;
+}
+
+const {
+  text = "No hay texto",
+  link,
+  size = "normal",
+  target = "_self",
+  download,
+} = Astro.props;
+---
+
+{
+  size == "big" ? (
+    <a
+      href={link}
+      {...(download ? { download: true } : {})}
+      target={target}
+      class="btn btn-active btn-lg"
+    >
+      <span>{text}</span>
+      <slot name="icon"/>
+    </a>
+  ) : (
+    <a
+      href={link}
+      {...(download ? { download: true } : {})}
+      target={target}
+      class="btn btn-ghost"
+    >
+      <span>{text}</span>
+      <slot name="icon"/>
+    </a>
+  )
+}

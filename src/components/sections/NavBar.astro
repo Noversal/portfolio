@@ -1,0 +1,19 @@
+---
+import Button from '../Button.astro';
+---
+
+<header class="navbar w-full absolute top-0 z-50">
+		<div class="flex m-auto w-full max-w-4xl">
+			<ul class="navbar-start gap-4">
+				<li>
+					<Button text="Sobre mi" link="#about_me"/>
+				</li>
+				<li>
+					<Button text="Proyectos" link="#proyects"/>
+				</li>
+			</ul>
+			<div class="navbar-end">
+				<Button text="Descargar CV" link="FrancoDionofrioCV.pdf" download />
+			</div>
+		</div>
+	</header>
