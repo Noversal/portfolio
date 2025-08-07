@@ -1,0 +1,36 @@
+---
+import '../styles/global.css'
+---
+
+<!doctype html>
+<html lang="es" data-theme="coffee" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro Basics</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+	/* jetbrains-mono-latin-wght-normal */
+	@font-face {
+		font-family: 'JetBrains Mono Variable';
+		font-style: normal;
+		font-display: swap;
+		font-weight: 100 800;
+		src: url(https://cdn.jsdelivr.net/fontsource/fonts/jetbrains-mono:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+	}
+
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		font-family: 'JetBrains Mono Variable', monospace;
+	}
+</style>
